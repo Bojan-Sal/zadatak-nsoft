@@ -1,0 +1,68 @@
+.krug {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    background-color: grey;
+    border-radius: 50%;
+    margin:10% auto;
+    cursor:pointer;
+    
+  }
+
+  .krug::before{
+      position: absolute;
+      content: '';
+      height: calc(100% + 30px); 
+      width: calc(100% + 30px); 
+      border: 8px;
+      border-style: dashed;
+      border-spacing: 15px;
+      border-color: yellow red;
+      top: -23px;
+      left: -23px;
+      border-radius: inherit;
+      animation: spinner 5s linear infinite;
+     
+  }
+  
+  button{
+    position: absolute;
+    color: lightgray;
+    font-size: 1.3em;
+    background-color: gray;
+    border:none;
+    border-radius: 50%;
+    margin: 45% 50;
+    cursor:pointer;
+  }
+
+  
+
+
+  .krug:active::after{
+      content: attr(data-default);
+      letter-spacing: normal;  
+      
+  }
+  
+  
+  .krug:active{
+    animation: anti-clockwise 2s linear infinite; 
+    
+  }
+
+
+@keyframes spinner{
+    from {transform: rotate(360deg);
+    }
+} 
+
+@keyframes anti-clockwise{
+   from {transform: rotate(-360deg);
+    }
+} 
+   
+  
+ 
+  
+        
